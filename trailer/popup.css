@@ -1,0 +1,32 @@
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup.active {
+    display: flex;
+}
+
+.popup-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+}
+
+.popup-content video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.popup-content .fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    cursor: pointer;
+}

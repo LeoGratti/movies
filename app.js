@@ -1,49 +1,54 @@
-function toggleVideo(){
-    const trailer = document.querySelector('.trailer');
-    trailer.classList.toggle('active');
-}
+/*function toggleVideo(event) {
+    event.preventDefault();
 
-function toggleVideo(event) {
-    if (!event) {
-        console.error("Evento não passado para a função toggleVideo");
+    const trigger = event.target.closet('[data-trailer]');
+    const trailerName = trigger ? trigger.getAttribute('data-trailer') : null;
+
+    if (!trailerName) {
+        const openTrailer = document.querySelector(".trailer.active");
+        if (openTrailer) {
+            const video = openTrailer.querySelector('video');
+            if (video)
+                video.pause();
+                openTrailer.classList.remove('active');
+        }
         return;
     }
 
-    const trailerName = event.target.getAttribute('data-trailer');
+    document.querySelectorAll('.trailer').forEach(t => {
+        t.classList.remove('active');
+        const v = t.querySelector('video');
+        if (v)
+            v.pause();
+    });
+
     const trailer = document.querySelector(`.trailer.${trailerName}`);
-    if (!trailer) {
-        console.error("Elemento .trailer não encontrado");
-        return;
-    }
-
-    const video = trailer.querySelector('video');
-    if (!video) {
-        console.error("Elemento video não encontrado dentro do trailer");
-        return;
-    }
-
-    if (trailer.classList.toggle('active')) {
-        video.pause();
+    if (trailer) {
+        trailer.classList.add('active');
+        const video = trailer.querySelector('video');
+        if (video)
+            video.play();
     } else {
-        video.play();
+        console.error(`Trailer não encontrado: .trailer.${trailerName}`)
     }
-
-    trailer.classList.toggle('active');
-}
-
+}*/
 
 function changeBg(bg, titulo) {
+    const bandeira = document.querySelector('.bandeira');
     const conteudos = document.querySelectorAll('.conteudo');
 
-    document.getElementsByClassName('bandeira')[0].style.background = `url("./images/${bg}")`
-    document.getElementsByClassName('bandeira')[0].style.backgroundSize = 'cover'
-    document.getElementsByClassName('bandeira')[0].style.backgroundPosition = 'center'
+    bandeira.style.background = `url('./images/${bg}') center / cover no-repeat`;
+
+    /*conteudos.forEach(conteudos => {
+        conteudos.classList.toggle('active', conteudos.classList.contains(titulo));
+    })*/
 
     conteudos.forEach(conteudo => {
         conteudo.classList.remove('active');
-        if (conteudo.classList.contains(titulo)) {
-            conteudo.classList.add('active');
-        }
     });
-}
 
+    const ativo = Array.from(conteudos).find(c =>
+        c.querySelector('.titulo-filme')?.src.includes(titulo)
+    );
+    if (ativo) ativo.classList.add('active');
+}
