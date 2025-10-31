@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Filmes</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="logotipo">Filmes</a>
+
+        <ul class="nav">
+            <li>
+                <a href=""><i class="fa fa-home" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="">Crianças</a></li>
+            <li><a href="">Adultos</a></li>
+            <li><a href="">Minha lista</a></li>
+        </ul>
+
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </header>
+
+    <div class="bandeira">
+        <div class="conteudo indiana-jones active">
+            <img src="./images-logotipo/indiana-jones.png" alt="" class="titulo-filme" />
+            <h4>
+                <span>2023</span><span><i>Livre</i></span>
+                <span>2h 14min</span><span>Aventura</span>
+            </h4>
+
+            <p>
+                Indiana Jones tem como missão resgatar uma pedra roubada por um cruel feiticeiro na Índia.
+                Ele descobre uma mina onde crianças são escravizadas e se depara com cultos de sacrifício humano nas
+                catacumbas de um antigo palácio.
+            </p>
+
+            <div class="button">
+                <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Assistir</a>
+                <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Minha lista</a>
+            </div>
+        </div>
+
+        <div class="conteudo avatar">
+            <img src="./images-logotipo/avatar.png" alt="" class="titulo-filme" />
+            <h4>
+                <span>2023</span><span><i>Livre</i></span>
+                <span>2h 14min</span><span>Aventura</span>
+            </h4>
+
+            <p>
+                Após formar uma família, Jake Sully e Ney'tiri fazem de tudo para ficarem juntos. No entanto, eles devem
+                sair de casa e explorar as regiões de Pandora quando uma antiga ameaça ressurge, e Jake deve travar uma
+                guerra difícil contra os humanos.
+            </p>
+
+            <div class="button">
+                <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Assistir</a>
+                <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Minha lista</a>
+            </div>
+        </div>
+
+        <div class="conteudo badBoys">
+            <img src="./images-logotipo/badBoys.png" alt="" class="titulo-filme" />
+            <h4>
+                <span>2023</span><span><i>+12</i></span>
+                <span>2h 14min</span><span>Aventura</span>
+            </h4>
+
+            <p>
+                Os brincalhões polícias de Miami, Mike Lowrey e Marcus Burnett, embarcam em uma perigosa missão para
+                limpar o nome do falecido capitão da polícia.
+            </p>
+
+            <div class="button">
+                <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Assistir</a>
+                <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Minha lista</a>
+            </div>
+        </div>
+
+        <div class="conteudo deadpool">
+            <img src="./images-logotipo/deadpool.png" alt="" class="titulo-filme" />
+            <h4>
+                <span>2023</span><span><i>+14</i></span>
+                <span>2h 14min</span><span>Aventura</span>
+            </h4>
+
+            <p>
+                Wolverine está se recuperando quando cruza seu caminho com Deadpool. Juntos, eles formam uma equipe e
+                enfrentam um inimigo em comum.
+            </p>
+
+            <div class="button">
+                <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Assistir</a>
+                <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Minha lista</a>
+            </div>
+        </div>
+
+        <div class="conteudo sonic">
+            <img src="./images-logotipo/sonic.png" alt="" class="titulo-filme" />
+            <h4>
+                <span>2023</span><span><i>Livre</i></span>
+                <span>2h 14min</span><span>Aventura</span>
+            </h4>
+
+            <p>
+                O porco-espinho Sonic é teletransportado para a Terra. Após causar uma pane elétrica em parte dos
+                Estados Unidos, ele precisa escapar do maligno cientista Dr. Robotnik.
+            </p>
+
+            <div class="button">
+                <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Assistir</a>
+                <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Minha lista</a>
+            </div>
+        </div>
+
+        <div class="carousel-box">
+            <div class="carousel">
+                <div class="carousel-item" onclick="changeBg('bg-indianaJones.png', 'indiana-jones');">
+                    <img src="./images/indianaJones.png" alt="">
+                </div>
+
+                <div class="carousel-item" onclick="changeBg('bg-avatar.jpg', 'avatar')">
+                    <img src="./images/avatar.png" alt="">
+                </div>
+
+                <div class="carousel-item" onclick="changeBg('bg-badBoys.png', 'badBoys');">
+                    <img src="./images/badBoys.png" alt="">
+                </div>
+
+                <div class="carousel-item" onclick="changeBg('bg-deadpool.jpeg', 'deadpool');">
+                    <img src="./images/deadpool.jpg" alt="">
+                </div>
+
+                <div class="carousel-item" onclick="changeBg('bg-sonic.jpeg', 'sonic');">
+                    <img src="./images/sonic.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="play" onclick="toggleVideo(event);" data-trailer="Indiana-Jones2"><i
+                class="fa fa-play-circle-o" aria-hidden="true"></i>
+            Assistir trailer
+        </a>
+
+        <ul class="midia">
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="filmeJones">
+        <div class=" trailer indiana-jones">
+            <video src="./assets/Indiana-Jones2.mp4" muted controls="true" autoplay="true"></video>
+            <img src="./images/fechar.png" alt="fechar" class="fechar" onclick="toggleVideo(event);" />
+        </div>
+    </div>
+
+    <div class="avatari">
+        <div class="trailer Avatar">
+            <video src="./assets/Avatar2.mp4" muted controls autoplay></video>
+            <img src="./images/fechar.png" alt="fechar" class="fechar" onclick="toggleVideo(event);" />
+        </div>
+    </div>
+
+    <div class="trailer badBoys">
+        <video src="./assets/Bad Boys.mp4" muted controls autoplay></video>
+        <img src="./images/fechar.png" alt="fechar" class="fechar" onclick="toggleVideo(event);" />
+    </div>
+
+    <div class="trailer deadpool">
+        <video src="./assets/Deadpool & Wolverine.mp4" muted controls autoplay></video>
+        <img src="./images/fechar.png" alt="fechar" class="fechar" onclick="toggleVideo(event);" />
+    </div>
+
+    <div class="trailer sonic">
+        <video src="./assets/sonic.mp4" muted controls autoplay></video>
+        <img src="./images/fechar.png" alt="fechar" class="fechar" onclick="toggleVideo(event);" />
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
+
+</body>
+
+</html>

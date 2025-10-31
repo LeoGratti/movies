@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes</title>
+    <style>
+        .trailer {
+            display: none;
+        }
+
+        .trailer.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="legendado">
+        <div class="trailer indiana-jones">
+            <video src="./assets/Indiana-Jones.mp4" muted controls autoplay></video>
+            <img src="./images/fechar.png" alt="fechar" class="fechar" onclick="toggleVideo(event);" />
+        </div>
+        <div class="trailer avatar">
+            <video src="./assets/Avatar.mp4" muted controls autoplay></video>
+            <img src="./images/fechar.png" alt="fechar" class="fechar" onclick="toggleVideo(event);" />
+        </div>
+    </div>
+
+    <button onclick="toggleVideo(event);" data-trailer="indiana-jones">Assistir trailer Indiana Jones</button>
+    <button onclick="toggleVideo(event);" data-trailer="avatar">Assistir trailer Avatar</button>
+
+    <script>
+        function toggleVideo(event) {
+            if (!event) {
+                console.error("Evento não passado para a função toggleVideo");
+                return;
+            }
+
+            const trailerName = event.target.getAttribute('data-trailer');
+            const trailer = document.querySelector(`.trailer.${trailerName}`);
+            if (!trailer) {
+                console.error("Elemento .trailer não encontrado");
+                return;
+            }
+
+            const video = trailer.querySelector('video');
+            if (!video) {
+                console.error("Elemento video não encontrado dentro do trailer");
+                return;
+            }
+
+            if (trailer.classList.contains('active')) {
+                video.pause();
+            } else {
+                video.play();
+            }
+
+            trailer.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
